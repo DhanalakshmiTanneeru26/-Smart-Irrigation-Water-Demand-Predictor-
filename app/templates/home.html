@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Predict Water Demand{% endblock %}
+
+{% block content %}
+  <section class="card">
+    <h1 class="card-title">Water Demand Predictor</h1>
+
+    <form class="form" method="POST" action="{{ url_for('predict') }}">
+      <div class="grid">
+        <div class="field">
+          <label for="temperature">Temperature (°C)</label>
+          <input id="temperature" name="temperature" type="number" step="0.1" required />
+        </div>
+        <div class="field">
+          <label for="humidity">Humidity (%)</label>
+          <input id="humidity" name="humidity" type="number" step="0.1" required />
+        </div>
+        <div class="field">
+          <label for="rainfall">Rainfall (mm)</label>
+          <input id="rainfall" name="rainfall" type="number" step="0.1" required />
+        </div>
+        <div class="field">
+          <label for="N">Nitrogen (N)</label>
+          <input id="N" name="N" type="number" step="0.1" required />
+        </div>
+        <div class="field">
+          <label for="P">Phosphorus (P)</label>
+          <input id="P" name="P" type="number" step="0.1" required />
+        </div>
+        <div class="field">
+          <label for="K">Potassium (K)</label>
+          <input id="K" name="K" type="number" step="0.1" required />
+        </div>
+      </div>
+
+      <button class="btn" type="submit">
+        Predict Water Requirement
+      </button>
+    </form>
+  </section>
+{% endblock %}
